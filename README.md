@@ -5,11 +5,21 @@ use this simple toolkit to query database.
 
 # Usage
 ```
-Usage: SimpleQuery [options] [The arguments for sql, if no sql script set, the first argument is the script file.]
+Usage: SimpleQuery [options] [The arguments of sql, if no sql script set, 
+      the first argument is the script file.]
   Options:
-    -d, --jdbc
-      The Report server JDBC datasource in HikariConfig format(ex: jdbc.properties) 
-      Default: ./jdbc.properties
+    -h, --help
+      Print this HELP
+    -c, --config
+      The Report server JDBC datasource in HikariConfig format(ex: 
+      jdbc.properties) 
+      Default: D:\workspace\tools\asu-db-simple-query\jdbc.properties
+    -u, --username
+      The user name of connection, overwrite the config file settings.
+    -p, --password
+      The password of connection, overwrite the config file settings.
+    -j, --jdbc-url
+      The jdbcUrl of connection, overwrite the config file settings.
     -s, --sql
       The sql script
     --readonly
@@ -18,8 +28,18 @@ Usage: SimpleQuery [options] [The arguments for sql, if no sql script set, the f
     -g, --group
       Display query result in group.
       Default: false
-    -h, --help
-      Print this HELP
+    --output-format-pretty-json
+      Pretty the output if output to a json file.
+      Default: false
+    -o, --output-file
+      write the result to file.
+    -e, --output-charset
+      The output file charset, default is dependent on system/file.encoding 
+      setting. 
+      Default: UTF-8
+    -f, --output-format
+      The output file format, support raw, csv and json.
+      Default: raw
     --page-size
       Display page size of query.
       Default: 10
