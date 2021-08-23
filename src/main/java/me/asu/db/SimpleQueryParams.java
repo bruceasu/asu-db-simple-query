@@ -63,7 +63,6 @@ public class SimpleQueryParams {
 
     @Parameter(names = {"-e","--output-charset"},
                description = "The output file charset, default is dependent on system/file.encoding setting.",
-               converter = PathConverter.class,
                order = 5)
     public String charset = Charset.defaultCharset().name();
 
