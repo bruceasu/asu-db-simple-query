@@ -90,7 +90,7 @@ public class GridMode implements Runnable {
             int m = maxColsWidth[i];
             for (int j = 0; j < currentPageRows; j++) {
                 final String s      = page[j][i];
-                final int    length = s.length();
+                final int    length = s==null ? 0 :s.length();
                 if (length > m) m = length;
             }
             maxColsWidth[i] = m;
