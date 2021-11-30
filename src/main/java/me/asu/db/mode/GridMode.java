@@ -36,12 +36,11 @@ public class GridMode implements Runnable {
                     System.in.read();
                 }
                 currentPageRows++;
-                cnt++;
                 String[] row = page[cnt % pageSize];
                 for (int i = 0; i < columnCount; i++) {
                     row[i] = safeString(resultSet, metaData.getColumnName(i + 1), i);
                 }
-
+                cnt++;
                 if (currentPageRows == pageSize) {
                     printPage(page, currentPageRows, maxColsWidth, columnCount, metaData);
                     currentPageRows = 0;
